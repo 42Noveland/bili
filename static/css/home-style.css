@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 在设置大小时同时设置margin和padding */
+    box-sizing: border-box;
+    font-family: consolas;
+    /* caret-color: transparent;隐藏光标，
+    无法隐藏input的光标，只能用color = transparent */
+    user-select: none;
+}
+
+body {
+    background: url(../img/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* //1vh视窗高度的1% */
+    /* //1vw视窗宽度的1% */
+    min-height: 100vh;
+    /* overflow: hidden; */
+    background-attachment: fixed;
+}
+
+/* 立体搜索框 */
+.header-search {
+    /* display: inline-block; */
+    margin: 0px auto;
+    width: 40vw;
+    position: relative;
+    top: -4.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow {
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    /* calc函数用于计算不同类型的长度注意运算符前后都有空格 */
+    width: calc(100% + 50px);
+    height: 300px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent, transparent);
+    transform-origin: top;
+    transform: skew(45deg);
+    caret-color: transparent;
+}
+
+/* .shadow::before {
+    content: ' ';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #cfd1e1;
+    z-index: 1;
+} */
+.searchBox {
+    position: relative;
+    width: 65px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* transition: 变化属性 变化时间 变化曲线 何时开始 */
+    transition: 0.5s;
+}
+
+.searchBox:hover {
+    width: 400px;
+}
+
+.searchBox:hover input::placeholder {
+    color: #888;
+
+}
+
+.searchBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 10px;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+    filter: blur(1px);
+
+}
+
+.searchBox::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 10px;
+    height: 100%;
+    background: #9d9d9d;
+    z-index: 1;
+    filter: blur(1px);
+
+}
+
+.searchBox input {
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px 25px;
+    outline: none;
+    font-size: 1.1em;
+    color: transparent;
+    background: linear-gradient(#dbdae1, #a3aaba);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        20px 20px 15px rgba(0, 0, 0, 0.1),
+        inset 1px 1px 2px #fff;
+}
+
+/* 未hover时隐藏placeholder */
+.searchBox input::placeholder {
+    color: transparent;
+}
+
+.searchBox:hover input {
+    color: #555;
+}
+
+.searchBox>i {
+    position: absolute;
+    right: 25px;
+    /* font-size: 1.5em; */
+    color: #555;
+    cursor: pointer;
+}
+
+/* 立体搜索框 OVER*/
+.header-bar {
+    height: 5.7vh;
+    background:linear-gradient(#555,#888);
+    opacity: 0.6;
+    /* box-shadow:inset 2px 2px 7px #000; */
+}
+
+.header-bar:hover {
+    opacity: 0.9;
+}
+
+/* LOGO */
+
+.loader {
+    position: relative;
+    caret-color: transparent;
+    height: 50px;
+    width: 30vw;
+    cursor: pointer;
+    line-height: 45px;
+    left: 1vw;
+}
+
+.loader span {
+    position: relative;
+    font-size: 2vw;
+    /* transform: scale(1, 2); */
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    display: inline-block;
+    text-transform: uppercase;
+    animation: animate 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    animation-play-state: running;
+    height: 2vh;
+    width: 1vh;
+}
+
+.loader span:hover {
+    font-size: 3vw;
+    transform: none;
+}
+
+@keyframes animate {
+
+
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(1.5vh);
+    }
+}
+
+/* LOGO  OVER*/
+
+
+.account {
+    /* font-family: consolas; */
+    position: absolute;
+    width: 30vh;
+    height: 60px;
+    line-height: 60px;
+    top: 0px;
+    right: 4vw;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    text-decoration: none;
+    
+}
+.account a{
+    color: black;
+    color: #fff;
+}
+.account li{
+    color: #fff;
+    width: 20vh;/* 此行以取消因为字体大小变化带来的左右移动 */
+    font-size: 3vh;
+    
+}
+.account li:hover {
+    font-weight: bold;
+    font-size: 4vh;
+}

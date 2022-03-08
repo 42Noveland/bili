@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* //1vh视窗高度的1% */
+    /* //1vw视窗宽度的1% */
+    min-height: 100vh;
+    /* background-color: #cfd1e1; */
+    overflow: hidden;
+}
+.con-box img {
+    width: 110px;
+    height: 150px;
+    opacity: 0.9;
+    margin: 20px 0;
+}
+.container {
+    background: #fff;
+    width: 650px;
+    height: 415px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.form-box {
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    background-color: #3f3c41;
+    width: 320px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: 0.5s ease-in-out;
+    /* display: none; */
+}
+.register-box,.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-shadow: 0 0 0 white;
+    color: transparent;
+    user-select: none;
+    letter-spacing: 5px;
+    cursor: default;
+}
+input {
+    background-color: transparent;
+    width: 70%;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 0;
+    text-indent: 10px;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+/* input::placeholder {
+    /* 预设placeholder的颜色 
+} */
+input:focus {
+    color: #6c659c;
+    outline: none;
+    border-bottom: 1px solid;
+    transform: 0.5s;
+}
+input:focus::placeholder{
+    opacity: 0;
+}
+.form-box button {
+    width: 70%;
+    margin-top: 35px;
+    background-color: #fff;
+    outline: none;
+    border-radius: 8px;
+    padding: 13px;
+    color: #888888;
+    letter-spacing: 2px;/* 文字间距letter-spacing */
+    border: none;
+    cursor: pointer;
+}
+.form-box button:hover {
+    background-color: rgb(207, 206, 206);
+    color: #ffffff;
+    transition: background-color 0.5s ease;
+}
+.con-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.con-box.left {
+    left: -2px;
+}
+.con-box.right {
+    right: -2px;
+}
+.con-box h2 {
+    color: #8e9aaf;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.con-box p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8e9aaf;
+    text-align: center;
+}
+.con-box span {
+    color: #a2a0f38e;
+}
+.con-box button {
+    margin-top: 3%;
+    background-color: #fff;
+    border: 1px solid #8e9aaf;
+    padding: 6px 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+}
+.form-box button:hover {
+    background-color: rgb(207, 206, 206);
+    color: #ffffff;
+    transition: background-color 0.5s ease;
+}
+.hidden {
+    display: none;
+    transition: 0.5s;
+}
+
